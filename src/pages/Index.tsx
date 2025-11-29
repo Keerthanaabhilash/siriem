@@ -7,6 +7,7 @@ import OurApproach from "@/components/sections/OurApproach";
 import Offerings from "@/components/sections/Offerings";
 import Verticals from "@/components/sections/Verticals";
 import CTA from "@/components/sections/CTA";
+import Solutions from "@/components/sections/Solutions";
 
 const Index = () => {
   return (

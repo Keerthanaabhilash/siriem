@@ -1,3 +1,4 @@
+// src/components/sections/Hero.tsx
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Play, Zap } from "lucide-react";
 import { motion } from "framer-motion";
@@ -27,7 +28,8 @@ const Hero = () => {
               className="inline-flex items-center space-x-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-6"
             >
               <Zap className="h-4 w-4 text-primary" />
-              <span className="text-sm font-medium text-primary">The Future is Electric</span>
+              {/* Official site uses "SIRI" branding — short headline */}
+              <span className="text-sm font-medium text-primary">India’s first full-stack charging technology company</span>
             </motion.div>
 
             <motion.h1
@@ -36,8 +38,7 @@ const Hero = () => {
               transition={{ delay: 0.3 }}
               className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
             >
-              Revolutionary{" "}
-              <span className="text-gradient">AI-Powered Charging</span>
+              We build chargers, and craft smart solutions that seamlessly work with any battery.
             </motion.h1>
 
             <motion.p
@@ -46,9 +47,7 @@ const Hero = () => {
               transition={{ delay: 0.4 }}
               className="text-xl text-muted-foreground mb-8 max-w-xl"
             >
-              At SIRI Electromotive, we believe the future is electric. With our revolutionary 
-              AI-powered charging technology, we build chargers and craft smart solutions that 
-              seamlessly work with any battery, no matter its complexity.
+              SIRI delivers end-to-end EV charging hardware and software — AC & DC chargers (3.3 kW to 360 kW), Charging Management Systems, and managed services for fleets, OEMs and commercial operators.
             </motion.p>
 
             <motion.div
@@ -58,32 +57,34 @@ const Hero = () => {
               className="flex flex-wrap gap-4"
             >
               <Button size="lg" className="glow group">
-                Explore Solutions
+                Talk to our experts
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Button>
               <Button size="lg" variant="outline">
                 <Play className="mr-2 h-4 w-4" />
-                Watch Demo
+                View Products
               </Button>
             </motion.div>
 
-            {/* Stats */}
+            {/* Stats — aligned to the original site's product focus */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
               className="grid grid-cols-3 gap-8 mt-12 pt-12 border-t border-border"
             >
-              {[
-                { value: "10K+", label: "Charging Stations" },
-                { value: "50+", label: "Countries" },
-                { value: "99.9%", label: "Uptime" },
-              ].map((stat, index) => (
-                <div key={index}>
-                  <div className="text-3xl font-bold text-gradient mb-1">{stat.value}</div>
-                  <div className="text-sm text-muted-foreground">{stat.label}</div>
-                </div>
-              ))}
+              <div>
+                <div className="text-3xl font-bold text-gradient mb-1">3.3 kW – 360 kW</div>
+                <div className="text-sm text-muted-foreground">Charger Power Range</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-gradient mb-1">AC & DC</div>
+                <div className="text-sm text-muted-foreground">Charger Types</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-gradient mb-1">Fleets & OEMs</div>
+                <div className="text-sm text-muted-foreground">Primary verticals</div>
+              </div>
             </motion.div>
           </motion.div>
 
@@ -102,15 +103,15 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-            
+
             {/* Floating Cards */}
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 3, repeat: Infinity }}
               className="absolute -top-6 -right-6 bg-card p-4 rounded-xl shadow-elevated border border-border"
             >
-              <div className="text-sm font-medium">Fast Charging</div>
-              <div className="text-2xl font-bold text-primary">350kW</div>
+              <div className="text-sm font-medium">Peak Output</div>
+              <div className="text-2xl font-bold text-primary">360 kW</div>
             </motion.div>
 
             <motion.div
@@ -118,8 +119,8 @@ const Hero = () => {
               transition={{ duration: 3, repeat: Infinity, delay: 1 }}
               className="absolute -bottom-6 -left-6 bg-card p-4 rounded-xl shadow-elevated border border-border"
             >
-              <div className="text-sm font-medium">Efficiency</div>
-              <div className="text-2xl font-bold text-primary">98%</div>
+              <div className="text-sm font-medium">Flexible</div>
+              <div className="text-2xl font-bold text-primary">AC & DC</div>
             </motion.div>
           </motion.div>
         </div>
